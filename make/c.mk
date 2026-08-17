@@ -1,6 +1,6 @@
 C_DIR := $(CURDIR)/chore/c
-C_SOURCES := $(wildcard $(C_DIR)/*.c) # -> chore/c/*.c
-OBJECTS := $(patsubst %.c,%.o,$(C_SOURCES)) # ->.c ->.o
+C_SOURCES := $(wildcard $(C_DIR)/*.c)
+OBJECTS := $(patsubst %.c,%.o,$(C_SOURCES))
 CC := gcc
 CFLAGS := -Wall -Wextra
 
@@ -9,6 +9,9 @@ CFLAGS := -Wall -Wextra
 
 main: $(OBJECTS)
 	@cd $(C_DIR) && $(CC) $^ -o $@ $(CFLAGS)
+
+run:
+	@cd $(C_DIR) && ./main
 
 .PHONY: clean
 clean: ## cleans all .o and exec

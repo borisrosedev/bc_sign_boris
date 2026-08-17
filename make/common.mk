@@ -1,5 +1,5 @@
 .ONESHELL:
-SHELL := /bin/bash # /usr/bin/bash
+SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 MAKEFLAGS += --warn-undefined-variables
 .DEFAULT_GOAL := help

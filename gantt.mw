@@ -1,0 +1,15 @@
+---
+title: bc_design_boris
+#chore: #b1f4b6
+timezone: Europe/Paris
+dateFormat:
+  - pattern: '^\d{1,2}/\d{1,2}/\d{4}$'
+    fromFormat: d/M/yyyy
+---
+
+# All Projects
+
+## Chore Project #chore
+
+17/08/2026 2pm - 2h: #chore
+  - [x] Créer chore et make
