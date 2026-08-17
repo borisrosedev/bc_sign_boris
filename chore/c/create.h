@@ -3,5 +3,5 @@
 
 typedef enum { MODE_WRITE, MODE_READ, MODE_EXEC } FileMode;
 
-int createFile(char *filename, FileMode fileMode, char *content);
+int createFile(const char *filename, FileMode fileMode, const char *content);
 #endif

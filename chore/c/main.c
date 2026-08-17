@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
-  int result = createFile("", MODE_WRITE, "");
-  printf("%d", result);
+  createFile("../../checkmake.ini", MODE_WRITE, "");
+  createFile("../../.marklintrc", MODE_WRITE, "");
   return 0;
 }
