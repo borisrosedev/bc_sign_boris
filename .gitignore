@@ -7,3 +7,5 @@ node_modules
 coverage
 logs
 .logs
+compile_commands.json
+.cache
