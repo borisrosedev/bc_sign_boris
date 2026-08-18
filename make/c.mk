@@ -8,12 +8,12 @@ CFLAGS := -Wall -Wextra
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-main: $(OBJECTS)
+build: $(OBJECTS)
 	@cd $(C_DIR) && $(CC) $^ -o $@ $(CFLAGS)
 
 run:
-	@cd $(C_DIR) && ./main
+	@cd $(C_DIR) && ./build
 
 
 clean: ## cleans all .o and exec
-	@rm -rf $(OBJECTS) $(C_DIR)/main
+	@rm -rf $(OBJECTS) $(C_DIR)/build
