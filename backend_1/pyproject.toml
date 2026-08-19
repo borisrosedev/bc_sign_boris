@@ -1,0 +1,7 @@
+[tool.fastapi]
+entrypoint = "main:app"
+
+[dependency-groups]
+dev = [
+    "fastapi[standard]>=0.141.1",
+]
