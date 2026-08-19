@@ -1,0 +1,16 @@
+services:
+  lab-sqlserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    container_name: lab-sqlserver
+    platform: linux/amd64
+    ports:
+      - "1433:1433"
+    env_file:
+      - .db.env
+    volumes:
+      - mssql-data:/var/opt/mssql
+      - ./requests:/requests:ro
+volumes:
+  mssql-data:
