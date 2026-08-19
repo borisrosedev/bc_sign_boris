@@ -1,3 +1,3 @@
 IF DB_ID('Boutique') IS NULL
-  CREATE DATABASE Boutique;
+  CREATE DATABASE Boutique COLLATE French_CI_AS;
 GO

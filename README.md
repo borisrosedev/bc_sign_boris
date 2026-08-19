@@ -53,3 +53,8 @@ procédurales (variables, boucles, gestion d'erreurs)</span>.
 ### sys.master_files
 La vue système sys.master_files liste tous les fichiers de toutes les bases de l'instance, avec
 leur type et leur chemin physique. Requête indispensable au quotidien.
+
+
+### T-SQL (Transact-SQL)
+
+T-SQL (Transact-SQL) est le dialecte SQL de Microsoft. Il ajoute au SQL standard (norme ISO) des extensions procédurales : variables, structures de contrôle ( IF , WHILE ), gestion d'erreurs ( TRY/CATCH ), et de nombreuses fonctions. Tout ce que fait un DBA passe, directement ou indirectement, par du T-SQL.

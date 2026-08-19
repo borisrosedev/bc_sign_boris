@@ -1,5 +1,6 @@
 .PHONY: db.ps db.up db.deploy \
-db.down db.down.v db.ping db.dbs db.ps
+db.down db.down.v db.ping db.dbs db.ps \
+db.orders db.client.list
 
 
 DB_DIR := $(CURDIR)/docker/database
@@ -11,6 +12,10 @@ DB_PASSWORD := $(shell cat $(DB_ENV_FILE) | grep "PASS" | cut -d= -f2 | tr -d " 
 SQLCMD_BIN := /opt/mssql-tools18/bin/sqlcmd -S localhost,1433 -U sa -P '$(DB_PASSWORD)' -C
 SQLCMD := docker exec -i $(CONTAINER_SERVICE) $(SQLCMD_BIN)
 SQLCMD_W := docker exec -i -w $(DB_REQUESTS_MOUNT) $(CONTAINER_SERVICE) $(SQLCMD_BIN)
+SQLCMD_DB := docker exec -it lab-sqlserver /opt/mssql-tools18/bin/sqlcmd \
+-S localhost -U sa -P '$(DB_PASSWORD)' -C -d Boutique
+
+
 
 db.up: ## runs db container
 	@cd $(DB_DIR) && docker compose up -d
@@ -24,7 +29,6 @@ db.ping:
 	@$(SQLCMD) -Q "SELECT @@VERSION;"
 db.dbs:
 	@$(SQLCMD) -Q "SELECT name, database_id FROM sys.databases;"
-
 db.ps:
 	@echo -e "\n$(INFO_COLOR)------------------------------------------$(NO_COLOR)\n"
 	result=$$(docker ps --filter "name=lab-sqlserver")
@@ -34,3 +38,6 @@ db.ps:
 		echo "$$result"
 	fi
 	@echo -e "\n$(INFO_COLOR)------------------------------------------$(NO_COLOR)\n"
+
+db.client.list:
+	@$(SQLCMD_DB) -Q "SELECT ClientScopes FROM dbo.Client;"
