@@ -5,6 +5,21 @@
 
 namespace fs = std::filesystem;
 
+int createFolder(std::string folderName) {
+
+  fs::path rootDir("../../");
+  fs::path folderPath(rootDir.concat(folderName));
+  if (fs::create_directory(folderPath)) {
+    std::cout << "\033[36;1m" << "The folder {" << folderName
+              << "} has been created" << "\033[m" << std::endl;
+  } else {
+    std::cout << "\033[31;1m" << "The folder {" << folderName
+              << "} has not been created" << "\033[m" << std::endl;
+  }
+
+  return 0;
+}
+
 int createFile(std::string fileName, std::string content, FileMode fileMode) {
   if (fileName == "") {
     return 1;
