@@ -1,6 +1,21 @@
 #include "create.h"
+#include "display.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int createFolder(const char *folderName) {
+  mode_t mode = 0755;
+  int folderCreationResult = mkdir(folderName, mode);
+  if (folderCreationResult == 0) {
+    displayMsg("Folder created successfully", INFO_MSG);
+  } else {
+    displayMsg("Folder failted to be created", ERROR_MSG);
+  }
+}
 
 int createFile(const char *filename, const char *content, FileMode fileMode) {
 

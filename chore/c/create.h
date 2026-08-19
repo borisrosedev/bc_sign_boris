@@ -18,4 +18,5 @@ typedef enum {
 // Elle retournera obligatoirement en entier ( int ) et elle a 3 paramètres :
 // deux sont de types pointeurs de char et un a un type personnalisé FileMode
 int createFile(const char *filename, const char *content, FileMode fileMode);
+int createFolder(const char *folderName);
 #endif
