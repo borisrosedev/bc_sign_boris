@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>🛍️ Boutique | Home</title>
+    <link rel="icon" type="image/png" href="{% static 'boutique/images/favicon.svg' %}" />
+</head>
+
+<body>
+
+    <main class="
+            min-h-screen
+            flex
+            items-center
+            justify-center
+            bg-[url(/static/boutique/images/bg.jpg)]
+            bg-blend-overlay
+            bg-[rgba(0,0,0,0.5)]
+            bg-cover
+            bg-center
+        ">
+        <form
+            id="login-form"
+            class="
+            flex
+            shadow-xl
+            flex-col
+            w-[300px]
+            p-5">
+            <section class="
+                flex
+                flex-col
+            ">
+                <article class="my-2 flex flex-col">
+                    <label for="email"></label>
+                    <input
+                        aria-required="true"
+                        autocomplete="email"
+                        required
+                        class="
+                        mb-1
+                        p-2
+                        rounded-[5px]
+                        focus:outline-none
+                        bg-[rgb(225,225,225)]"
+                        id="email"
+                        type="email"
+                        placeholder="john@doe.com"
+                    >
+                </article>
+                <article class="my-2 flex flex-col">
+                    <label for="password"></label>
+                    <input
+
+                        autocomplete="current-password"
+                        aria-required="true"
+                        required
+                        class="
+                        mt-1
+                        p-2
+                        rounded-[5px]
+                        focus:outline-none
+                        bg-[rgb(225,225,225)]
+                    "
+                    id="password"
+                    type="password"
+                    placeholder="********************">
+                </article>
+
+            </section>
+            <section class="flex my-5 justify-between">
+                <button
+                    type="submit"
+                    class="
+                        hover:w-[200px]
+                        w-[100px]
+                        ease-in-out
+                        duration-300
+                        hover:cursor-pointer
+                        px-5
+                        py-2
+                        text-[rgb(255,255,255)]
+                        mr-5
+                        rounded-[5px]
+                        bg-[rgb(0,150,100)]">Submit</button>
+
+                <button
+                    type="reset"
+                    class="
+                        hover:cursor-pointer
+                        px-5
+                        py-2
+                        text-[rgb(255,255,255)]
+                        hover:w-[200px]
+                        w-[100px]
+                        ease-in-out
+                        duration-300
+                        rounded-[5px]
+                        bg-[rgb(150,0,0)]"
+                    >Reset</button>
+            </section>
+        </form>
+    </main>
+
+
+
+    <script src="{% static 'boutique/js/main.js' %}"></script>
+</body>
+
+</html>
