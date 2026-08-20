@@ -1,0 +1,30 @@
+{
+  "name": "bc_sign_boris",
+  "version": "1.0.0",
+  "description": "```bash conda activate web-django",
+  "main": "index.js",
+  "scripts": {
+    "format:write": "npx prettier . --write",
+    "format:check": "npx prettier . --check",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borisrosedev/bc_sign_boris.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/borisrosedev/bc_sign_boris/issues"
+  },
+  "homepage": "https://github.com/borisrosedev/bc_sign_boris#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.11.0",
+    "prettier": "3.9.6"
+  }
+}
